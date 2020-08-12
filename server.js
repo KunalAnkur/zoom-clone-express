@@ -5,6 +5,9 @@ const {v4: uuidv4} = require('uuid')
 
 
 app.set('view engine', 'ejs')
+app.use(express.static('public'))
+
+
 
 app.get('/' ,(req,res)=>{
     res.status(200).redirect(`/${uuidv4()}`)
