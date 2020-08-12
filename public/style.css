@@ -2,9 +2,96 @@
     display: flex;
     justify-content: center;
 }
-
+body {
+    margin: 0;
+    padding: 0;
+}
 video {
     height: 300px;
     width: 400px;
     object-fit: cover;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    
+}
+
+.mainLeft {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainRight {
+    flex: 0.2;
+    /* display: flex; */
+}
+
+.mainVideo {
+    flex-grow: 1;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mainControl {
+    display: flex;
+    background-color: #1c1e20;
+    color: #d2d2d2;
+    padding: 5px;
+    justify-content:space-between ;
+}
+.mainControlsBlock{
+    display: flex;
+}
+.mainControlsButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 10px;
+    min-width: 80px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.mainControlsButton i {
+    font-size: 24px;
+}
+
+.leaveMeeting {
+    color: #eb534b;
+}
+
+.mainControlsButton:hover {
+    background-color: #343434;
+    border-radius: 5px;
+}
+.mainRight{
+    display: flex;
+    flex-direction: column;
+    background-color: #242324;
+    border-left: 1px solid #3d3d42
+}
+
+.mainHeader {
+    color: #f5f5f5;
+    text-align: center;
+}
+
+.mainChatWindow {
+    flex-grow: 1;
+
+}
+.mainMessageContainer{
+    padding:22px 12px;
+    display: flex;
+}
+
+.mainMessageContainer input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: #f5f5f5;
 }
