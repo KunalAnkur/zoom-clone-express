@@ -1,3 +1,5 @@
+
+
 const socket = io('/');
 const videoGrid = document.getElementById('video-grid');
 
@@ -61,4 +63,26 @@ const addVideoStream = (video, stream) => {
         video.play();
     });
     videoGrid.append(video);
+}
+
+let text = $('input');
+
+
+$('html').keydown((e)=>{
+    if(e.which == 13 && text.val().lenght !== 0) {
+        console.log(text.val())
+        socket.emit('message', text.val());
+        text.val('');
+    }
+})
+
+socket.on('createMessage', message => {
+    console.log('this is coming from server',message);
+    $('ul').append(`<li class="message"><b>user</b><br/>${message}</li>`);
+    scrollToBottom();
+})
+
+const scrollToBottom = () => {
+    var d = $('.mainChatWindow');
+    d.scrollTop(d.prop("scrollHeight"));
 }
