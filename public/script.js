@@ -9,7 +9,7 @@ myVideo.muted = true;
 var peer = new Peer(undefined, {
     path: '/peerjs',
     host: '/',
-    port: '3000'
+    port: '443'
 });
 
 let myVideoStream;
@@ -137,3 +137,19 @@ const setPlayVideo = () => {
     document.querySelector('.mainVideoButton').innerHTML = html;
 }
 
+
+
+// <div class="mainControlsBlock">
+//                     <div class="mainControlsButton">
+//                         <i class="fas fa-shield-alt"></i>
+//                         <span>Security</span>
+//                     </div>
+//                     <div class="mainControlsButton">
+//                         <i class="fas fa-user-friends"></i>
+//                         <span>Participants</span>
+//                     </div>
+//                     <div class="mainControlsButton">
+//                         <i class="fas fa-comment-alt"></i>
+//                         <span>Chat</span>
+//                     </div>
+//                 </div>
