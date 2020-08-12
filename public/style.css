@@ -101,3 +101,7 @@ video {
     color: white;
     list-style: none;
 }
+
+.unmute {
+    color: #cc3b33;
+}

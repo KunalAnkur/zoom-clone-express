@@ -69,7 +69,7 @@ let text = $('input');
 
 
 $('html').keydown((e)=>{
-    if(e.which == 13 && text.val().lenght !== 0) {
+    if(e.which === 13 && text.val().length !== 0) {
         console.log(text.val())
         socket.emit('message', text.val());
         text.val('');
@@ -85,4 +85,27 @@ socket.on('createMessage', message => {
 const scrollToBottom = () => {
     var d = $('.mainChatWindow');
     d.scrollTop(d.prop("scrollHeight"));
+}
+
+const muteUnmute = () => {
+    const enabled = myVideoStream.getAudioTracks()[0].enabled;
+    if(enabled) {
+        myVideoStream.getAudioTracks()[0].enabled = false;
+        setUnmuteButton();
+    } else{
+        setMuteButton();
+        myVideoStream.getAudioTracks()[0].enabled = true;
+    }
+} 
+const setMuteButton = () =>{
+    const html = `
+    <i class="mute fas fa-microphone"></i>
+    <span>Mute</span>`;
+    document.querySelector('.mainMuteButton').innerHTML = html;
+}
+const setUnmuteButton = () =>{
+    const html = `
+    <i class="unmute fas fa-microphone-slash"></i>
+    <span>Unmute</span>`;
+    document.querySelector('.mainMuteButton').innerHTML = html;
 }
